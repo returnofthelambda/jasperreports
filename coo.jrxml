@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coo" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0fedfd15-803c-4743-a771-7038907193bb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<subDataset name="certOfOriginSet" uuid="c689dc85-27e9-4d0a-829c-b13628ada68d">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="372"/>
+		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="620"/>
+		<parameter name="bookingID" class="java.lang.Integer"/>
+		<parameter name="poundSum" class="java.math.BigDecimal"/>
+		<parameter name="containerPackageSum" class="java.lang.Integer"/>
+		<queryString language="SQL">
+			<![CDATA[select  containerNum, containerPackageNum, containerWeight, containerProduct, containerPackage, containerDescription, containerIP from container where containerBookingID=$P{bookingID}]]>
+		</queryString>
+		<field name="containerNum" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+		<field name="containerPackageNum" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="containerPackageNum"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+		<field name="containerWeight" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="containerWeight"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+		<field name="containerProduct" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="containerProduct"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+		<field name="containerPackage" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="containerPackage"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+		<field name="containerDescription" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="containerDescription"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+		<field name="containerIP" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="containerIP"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+		</field>
+	</subDataset>
+	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="poundSum" class="java.math.BigDecimal"/>
+	<parameter name="containerPackageSum" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select bookingVessel, containerYear,  customerName, addressline, containerOrderNumber from booking inner join customer on booking.bookingCustomerID=customerID inner join container on container.containerBookingID=booking.bookingID inner join address on address.addressCustomerID=customer.customerID where bookingID=$P{bookingID} group by bookingID]]>
+	</queryString>
+	<field name="bookingVessel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingVessel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="containerYear" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerYear"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="customerName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="addressline" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="addressline"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="address"/>
+	</field>
+	<field name="containerOrderNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerOrderNumber"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="140" y="-10" width="280" height="29" uuid="33945cfa-6d4a-473e-b82c-70308736f861"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="90" y="10" width="370" height="40" uuid="a913c062-c9eb-4490-a6e0-e278a2c72a1d"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC., 9768 Milledgeville -- Jeffersonville Road --
+Jeffersonville,OH, 43128
+TEL: (740) 426-6683 -- FAX: (740) 426-6684
+]]></text>
+			</staticText>
+			<image>
+				<reportElement positionType="Float" x="-2" y="0" width="82" height="49" uuid="1a419df4-1833-4b9d-94b7-5370d7720e58"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="130" y="45" width="300" height="20" uuid="e19ddde9-1ba6-43a8-8fc1-08b6bab7ada1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICATE OF ORIGIN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="7" width="81" height="12" uuid="268e0988-c676-4830-8437-caac410be0d4"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[The undersigned]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="70" y="19" width="489" height="1" uuid="246cab59-e44e-424e-a45e-dd83c5220771"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="-11" y="30" width="20" height="12" uuid="5b606566-d2be-46fb-8a77-d16add218494"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[for]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="506" y="30" width="39" height="12" uuid="a59ac5c6-bc90-46ba-a70e-cf154ba921c8"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[declares]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="10" y="40" width="489" height="1" uuid="0ca61345-a9c0-42e4-a200-1622822db4ad"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="270" y="19" width="39" height="12" uuid="f53f62a5-7b70-4613-8303-5e5fcaaafe74"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(Agent)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="120" y="41" width="130" height="12" uuid="96376099-1ded-4a05-97ee-4e5dd674615d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(Name and Address of Shipper)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="52" width="190" height="12" uuid="1e29a4a0-1bfc-4b9b-a996-af72854cc55d"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[that the following metioned goods shipped on]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="195" y="64" width="364" height="1" uuid="9f56ac7f-81f6-49c9-bbde-c94843a2dc33"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="300" y="64" width="59" height="12" uuid="cb217f99-9e4c-4530-9755-96473c4e4ef4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(Name of Ship)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-10" y="78" width="59" height="12" uuid="49abd8ca-7096-4178-a162-26c66d6fe36b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[on the date]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="40" y="90" width="129" height="1" uuid="2ba03328-fed1-480c-bf7f-44ab3b6fe531"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="180" y="78" width="59" height="12" uuid="e9f4a816-47a6-4ced-8068-c2a39da2c57f"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[consigned to]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="239" y="90" width="320" height="1" uuid="941b7d19-481c-4273-a9fa-17e74461227a"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="5" y="111" width="561" height="1" uuid="857cb656-b275-453e-9e20-c2c667a4543d"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="-5" y="122" width="169" height="1" uuid="fd2e82c2-04a6-4c55-9741-e62cd87259f4"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="183" y="111" width="204" height="12" uuid="bf92807b-54af-40cc-9abf-c2bfcffe5b5f"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[are the products of the United States of America]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="9" y="27" width="470" height="22" uuid="75b24797-c8d5-4104-91f5-97fe59a01c72"/>
+				<text><![CDATA[Bluegrass Farms of Ohio, INC., 9768 Milledgville]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="201" y="50" width="279" height="16" uuid="5637a99b-ed5c-4541-8e5f-2b4663b5d1f2"/>
+				<textFieldExpression><![CDATA[$F{bookingVessel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="261" y="78" width="289" height="30" uuid="1c96a5c2-7e70-423b-b8ac-c127c96b566a"/>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="10" y="93" width="541" height="18" uuid="0a4554ed-e11b-4d36-bde2-d82f60f33b2f"/>
+				<textFieldExpression><![CDATA[$F{addressline}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="296" splitType="Stretch">
+			<componentElement>
+				<reportElement positionType="Float" x="-1" y="3" width="579" height="66" uuid="93998fdc-a167-47ea-b3f6-03814a0ee9a7">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="certOfOriginSet" uuid="a9d9281f-fd21-438e-99b5-3185baeb4f95">
+						<datasetParameter name="bookingID">
+							<datasetParameterExpression><![CDATA[$P{bookingID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="poundSum">
+							<datasetParameterExpression><![CDATA[$P{poundSum}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="containerPackageSum">
+							<datasetParameterExpression><![CDATA[$P{containerPackageSum}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="110" uuid="9383defe-4284-4630-a8df-5a9b26665653">
+						<jr:tableHeader style="Table_TH" height="2"/>
+						<jr:tableFooter style="Table_TH" height="2"/>
+						<jr:columnHeader style="Table_CH" height="49">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="49" uuid="0278c5ad-174f-4f4c-8c73-d3fb1cc52fe7"/>
+								<textElement verticalAlignment="Middle"/>
+								<text><![CDATA[Marks and Numbers]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="12"/>
+						<jr:detailCell style="Table_TD" height="13">
+							<textField>
+								<reportElement x="0" y="0" width="110" height="13" uuid="ab4405ba-a15c-477e-8f4f-03d7b460a431"/>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{containerNum}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="99d03f93-cdcd-41d8-aa6a-9fbd93cc109f">
+						<jr:tableHeader style="Table_TH" height="2"/>
+						<jr:tableFooter style="Table_TH" height="2"/>
+						<jr:columnHeader style="Table_CH" height="49">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="49" uuid="b6093691-5801-4927-af09-3995bb15faff"/>
+								<textElement verticalAlignment="Middle"/>
+								<text><![CDATA[# of Pkgs. Boxes or Cases]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="12">
+							<box>
+								<pen lineWidth="1.0"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="50" height="12" uuid="4bcae722-0f73-4178-8869-95a8d00d18b2"/>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{containerPackageSum}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table_TD" height="13">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="13" uuid="0332cc13-a483-47a1-9196-b505ab08b709"/>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{containerPackageNum}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="b0d6faac-ba05-4c0a-b7a6-487e0f9e9e08">
+						<jr:tableHeader style="Table_TH" height="2"/>
+						<jr:tableFooter style="Table_TH" height="2"/>
+						<jr:columnHeader style="Table_CH" height="49">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="49" uuid="b76ad286-84e1-4333-9bef-14358106be2c"/>
+								<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+								<text><![CDATA[Gross]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="12"/>
+						<jr:detailCell style="Table_TD" height="13">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="13" uuid="30d982c2-8429-407a-91eb-5353ecfa1a2e"/>
+								<textElement textAlignment="Center">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="64ef825d-dcc5-4f29-a6b2-75a7f30da53a">
+						<jr:tableHeader style="Table_TH" height="2"/>
+						<jr:tableFooter style="Table_TH" height="2"/>
+						<jr:columnHeader style="Table_CH" height="49">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="49" uuid="660a8f5c-3b90-46a2-a25e-34ef267f5711"/>
+								<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+								<text><![CDATA[Net]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="12">
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="80" height="12" uuid="2adb99f9-b14d-45e4-8cc8-6b61949ad96f"/>
+								<textElement textAlignment="Center">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($P{poundSum})]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table_TD" height="13">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="13" uuid="bdead6f3-b583-4875-878f-db646f549d00"/>
+								<textElement textAlignment="Center">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="260" uuid="676ba15e-f2ce-473e-8ac9-9887a8177d29">
+						<jr:tableHeader style="Table_TH" height="2"/>
+						<jr:tableFooter style="Table_TH" height="2"/>
+						<jr:columnHeader style="Table_CH" height="49">
+							<staticText>
+								<reportElement x="0" y="0" width="260" height="49" uuid="940a6afa-321a-4dd0-b8b7-82e240504cf5"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<text><![CDATA[	Description]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="12"/>
+						<jr:detailCell style="Table_TD" height="13">
+							<textField>
+								<reportElement x="0" y="0" width="260" height="13" uuid="88235264-4649-4cd3-aa52-84b56355d7ff"/>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{containerProduct} + " " + $F{containerPackage} + " " + $F{containerDescription} + " " + $F{containerIP}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<line>
+				<reportElement positionType="Float" x="-1" y="54" width="579" height="1" uuid="301d532f-e8e5-42a0-a5f1-448beb16edc9"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="1" y="10" width="577" height="1" uuid="496db463-38c3-4024-bc6f-c47b85d6dcb6"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="99" y="10" width="1" height="44" uuid="fd21dbb4-c551-4207-8c2f-94afb6ec52cf"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="174" y="11" width="1" height="43" uuid="f59c0f4c-4b4e-4da2-a2f1-f23d3c393f4b"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="175" y="34" width="134" height="1" uuid="6390c484-3743-4fd0-a801-42c0e68d8090"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="309" y="11" width="1" height="43" uuid="f662ed0d-b497-4ead-be3a-f04688b77282"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="197" y="14" width="80" height="20" uuid="bd886057-4565-4038-ab24-ec999b2452a1"/>
+				<text><![CDATA[Weight in Pounds]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="-1" y="73" width="580" height="1" uuid="013498b0-6daf-4e44-8484-9d9e58eac343"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="10" y="79" width="170" height="24" uuid="75f0bbf5-5fef-44db-be3e-21adf4762fcb"/>
+				<textFieldExpression><![CDATA[$F{containerYear} + "		  CROP"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="14" y="108" width="70" height="15" uuid="d5fcc910-da1e-44d2-9ff1-02993d0d263c"/>
+				<text><![CDATA[Origin U.S.A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="124" width="130" height="12" uuid="2ab9668c-6fad-4f1d-b8f4-2148a615989f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Manufacturer and Producer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="136" width="177" height="11" uuid="c795867c-c083-4b76-b13f-09a52c97ea78"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bluegrass Farms of Ohio INC., 9768 Milledgville ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="147" width="177" height="11" uuid="925e3cb0-397b-4f56-bf4a-98634ec2a28b"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jeffersonville, OH, 43218 US]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="300" y="79" width="120" height="21" uuid="b16c45d4-290b-435f-95e9-cea4e090a006"/>
+				<text><![CDATA[Invoice Number: ]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="391" y="90" width="170" height="1" uuid="272b39a6-9675-4016-b24a-dcc83bbdb27a"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="390" y="79" width="110" height="20" uuid="b865fb7f-fc38-4026-821e-de2e6e3b0841"/>
+				<textFieldExpression><![CDATA[$F{containerOrderNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="300" y="101" width="80" height="22" uuid="f2e511cd-43f2-40c7-ba73-8a544ba839f5"/>
+				<text><![CDATA[Date: ]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="390" y="120" width="168" height="1" uuid="85df996a-418a-4b24-a61e-77855e167763"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="300" y="123" width="260" height="12" uuid="a403753b-24b8-4e09-8310-8838f65daf09"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[We certify that the goods are of USA origin, they contain no foreign]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="300" y="136" width="260" height="12" uuid="56247e7f-b1d9-434d-9b9c-350a96750a1d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[materials and they are being exported from the USA. The goods were]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="300" y="147" width="260" height="12" uuid="03d12960-6d43-4ad4-945b-f01043092ef7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Manufactured by: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="299" y="157" width="260" height="12" uuid="8212d4d1-6c74-4f87-a1b7-42f0d6c6cc73"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Bluegrass Farms of Ohio, Inc.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="-6" y="165" width="585" height="2" uuid="673434ce-0245-4778-adf6-7d836616ad2f"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="170" width="100" height="20" uuid="71f082c0-cba1-4f99-aa3e-3ca5acc15932"/>
+				<text><![CDATA[Sworn to before me]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="130" y="170" width="44" height="20" uuid="4077ba2a-32cc-4dce-a65f-2dc9581d9c16"/>
+				<text><![CDATA[Dated at]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="183" y="186" width="176" height="1" uuid="2d8e4ceb-effd-4169-8095-8383508a60d9"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="179" y="169" width="180" height="16" uuid="e03e6556-c367-4dec-8116-770eefd9f3bb"/>
+				<text><![CDATA[Jeffersonville, OH]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="420" y="186" width="148" height="1" uuid="fcbff6d4-b326-476e-8815-01d56fc09104"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="380" y="172" width="20" height="17" uuid="b3692c90-6559-49b6-9950-f618589e3805"/>
+				<text><![CDATA[on]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="30" y="220" width="71" height="1" uuid="8de63df6-95a0-4f19-9d1a-47f31382bf4a"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="160" y="220" width="91" height="1" uuid="cefe5c1d-0863-45e9-9951-ae0ddb28347d"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="320" y="220" width="209" height="1" uuid="48f809d7-f8ad-4b0d-867a-80d853780a53"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="110" y="210" width="40" height="20" uuid="78552440-6c75-404c-b407-80bc04d7ceda"/>
+				<text><![CDATA[day of]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="210" width="31" height="20" uuid="7772b406-f1a3-430e-b1d2-bc7b75c36078"/>
+				<text><![CDATA[This]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="370" y="220" width="175" height="12" uuid="372c8004-3066-4f32-be12-ce0369bd030c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Signature of Owner or Agent]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="1" y="251" width="357" height="1" uuid="535a1693-83b4-4dad-9ed6-976dc28f3e38"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="370" y="240" width="211" height="21" uuid="4b490933-c318-4555-b607-e726fe1ecc2c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[certifies that, in reliance on the exporter's]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="252" width="548" height="15" uuid="0f4987cb-e413-45e7-8564-c00f65534c13"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[representations and not on the basis of independent verification, that to the best of its knowledge and belief, the products
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="260" width="548" height="15" uuid="6833e644-a45d-4bba-b786-22bf0957ae56"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[named in this document originated in the United States of America.
+]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="320" y="280" width="126" height="1" uuid="6fd366e2-5d7a-4281-91f5-1da10c7b1777"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="463" y="280" width="101" height="1" uuid="95e744a9-c393-40ae-9f82-814e6f94ed36"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="360" y="282" width="43" height="12" uuid="26bd2042-396d-4f99-ac4b-7fa0f88b0219"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="501" y="282" width="25" height="12" uuid="d7750049-db55-4d18-a52e-e93c28983e4c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement positionType="Float" x="391" y="100" width="135" height="19" uuid="e588ac30-6b05-4c52-9b50-06d2a36e73fe"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement positionType="Float" x="430" y="171" width="97" height="19" uuid="1d951e23-71a2-413f-9310-98c8fd911d2a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

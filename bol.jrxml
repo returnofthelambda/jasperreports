@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bol" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c66b49f-6c17-49da-9639-948dec65fef2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<parameter name="containerID" class="java.lang.Integer"/>
+	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="product" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select bookingNum, bookingLot, bookingVessel, bookingVesselNum, containerNum, containerSize, containerWeight, containerProduct, containerPackage, containerSeal, containerOrderNumber, containerDescription, containerIP, containerDate, containerScreen, containerRailyard, containerStreet, containerPackageNum, customerName from booking inner join container on container.containerBookingID=booking.bookingID inner join customer on customer.customerID=booking.bookingCustomerID WHERE containerID=$P{containerID}]]>
+	</queryString>
+	<field name="bookingNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="bookingLot" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingLot"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="bookingVessel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingVessel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="bookingVesselNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingVesselNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="containerNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerSize" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="containerSize"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerWeight" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="containerWeight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerProduct" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerProduct"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerPackage" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerPackage"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerSeal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerSeal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerOrderNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerOrderNumber"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerDescription" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerDescription"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerIP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerIP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="containerDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerScreen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerScreen"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerRailyard" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerRailyard"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerStreet" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerStreet"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerPackageNum" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="containerPackageNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="customerName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<rectangle>
+				<reportElement key="" positionType="FixRelativeToBottom" x="-11" y="50" width="579" height="20" backcolor="#8F8F8F" uuid="a1726874-870c-4999-a065-2f8929c1d85e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="133" y="50" width="300" height="20" uuid="c5f4002c-af94-4c68-b986-8c6d4c0c4859">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[STRAIGHT BILL OF LADING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="10" width="370" height="40" uuid="230cc532-dd95-4f70-8840-2c03f31581bf"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC., 9768 Milledgeville -- Jeffersonville Road --
+Jeffersonville,OH, 43128
+TEL: (740) 426-6683 -- FAX: (740) 426-6684
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="-9" width="280" height="29" uuid="efa7b559-cf4b-4bb2-bc1b-ad42e2e8e2ec"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="659" splitType="Stretch">
+			<line>
+				<reportElement x="308" y="60" width="200" height="1" uuid="f7075c91-fe8b-4ec4-afd6-7cd73e9e66b3"/>
+			</line>
+			<staticText>
+				<reportElement x="-10" y="260" width="38" height="18" uuid="51e47760-acb6-40f6-aa92-fe730a8b7bc0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Route]]></text>
+			</staticText>
+			<line>
+				<reportElement x="419" y="407" width="143" height="1" uuid="8b72d282-ee37-42fb-ad28-a4a7dcf8c0e9"/>
+			</line>
+			<staticText>
+				<reportElement x="368" y="461" width="20" height="20" uuid="2b598400-1bf7-4693-8758-92270594e22c"/>
+				<text><![CDATA[Per]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="472" width="195" height="28" uuid="24a7d16d-4243-475e-8aac-40fec2c5ec28"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(The signature here acknowledges only the amount prepaid.)
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="261" width="169" height="1" uuid="2f6b4587-3797-462f-b298-da8c16b067ad"/>
+			</line>
+			<line>
+				<reportElement x="48" y="230" width="317" height="1" uuid="20f2ad1c-2201-44b2-b131-2847a66e81f0"/>
+			</line>
+			<line>
+				<reportElement x="29" y="248" width="336" height="1" uuid="ab9a4b3c-8ac6-40ad-accf-4ef7871c7cd3"/>
+			</line>
+			<line>
+				<reportElement x="259" y="261" width="29" height="1" uuid="6b399618-22c3-4b88-9e9d-ec4385cd129c"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="198" width="576" height="1" uuid="54955df6-ae1f-429b-8f12-0179c936f426"/>
+			</line>
+			<line>
+				<reportElement x="365" y="198" width="2" height="460" uuid="d802badb-df0b-4d74-abf0-427c8d4097cd"/>
+			</line>
+			<staticText>
+				<reportElement x="-3" y="65" width="569" height="133" uuid="4533cdb7-8d19-403f-a818-abfef966b0a6"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[the property described below, in apparent good order, except as noted (contents and condition of contents of packages unknown),marked, consigned, and destined as shown below, which said company (the word company being understood throughout this contract as meaning any person or corporation in possession of the property under the contract) agrees to carry to its usual place of delivery at said destination, if on its own railroad, water line, highway route or routes, or within the territory of its highway operations.otherwise to deliver to another carrier on the route to said destination. It is mutually agreed, as to each carrier of all or any of said property over all or any portion of said route to destination and as to each party at any time interested in all or any of said property, that every service to be performed hereunder shall be subject to all the terms and conditions of the Uniform Domestic Straight BIll of Lading set forth (&SF) in the Uniform Freight Classification in effect on the date hereof, if this is a rail or rail-water shipment, or(&SO) in the applicable motor carrier classification or tarrif if this is a motor carrier shipment. Shipper hereby certifies that he is familiar with all the terms and conditions of the said bill of lading, including those on the back thereof, set forth in the classification of tarrif hich governs the transportation of this shipment, and the said terms and conditions and hereby agreed to by the shipper and accepted for himself and his assigns]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="60" width="100" height="1" uuid="c50f03e6-775f-4c40-a06a-c5c3ae13ff78"/>
+			</line>
+			<staticText>
+				<reportElement x="8" y="48" width="90" height="15" uuid="d1b9e580-734e-42b6-8f18-75e69901a694"/>
+				<text><![CDATA[Jeffersonville, OH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-4" y="30" width="545" height="22" uuid="3faaaf04-9507-4985-b0a2-580d5f0dbaf3"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[RECEIVED, subject to the classifications and traffic in effect on the date of the issues of the Bill of lading.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-8" y="50" width="10" height="21" uuid="39dee8b6-9f98-43c2-8485-62b23e837879"/>
+				<text><![CDATA[at]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="50" width="30" height="20" uuid="d0db0324-8602-4b21-a91e-a0a0f4eaca6d"/>
+				<text><![CDATA[(Date)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="178" y="62" width="95" height="1" uuid="225f1700-7071-4a4d-b743-b0f25b5d3d6e"/>
+			</line>
+			<staticText>
+				<reportElement x="398" y="439" width="135" height="18" uuid="d71ad113-44a8-4333-9754-9e113ac8f650"/>
+				<text><![CDATA[Agent or Cashier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="50" width="30" height="20" uuid="c0775233-5178-4f93-80bf-0ab5bffd2fa0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FROM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="48" width="200" height="15" uuid="1bdb47b3-ceee-465e-9663-0f1a4aaebe0c"/>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC., 9768 Milledgeville]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="211" width="189" height="68" uuid="9d43c0cf-d1a5-4d6d-b48e-88a7f6aed3a4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ Subject to Section 7 of conditions,if this
+shipment is to be delivered to the consignee without recourse on the consignor, the consignor shall sign the folowing statement: The carrier shall not make delivery of the Shipment without payment of freight and all other lawful charges.
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="374" y="437" width="179" height="1" uuid="abaf0542-06a6-4e93-84f6-a457a6358cdc"/>
+			</line>
+			<staticText>
+				<reportElement x="408" y="300" width="140" height="20" uuid="00b455fa-12f9-4224-a897-092c77f0dfae"/>
+				<text><![CDATA[(Signature of Consignor.)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="368" y="336" width="20" height="11" uuid="3610fcc7-73ed-46b5-ae18-56787e92da57"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="398" y="336" width="60" height="20" uuid="27cbddf7-bde1-47cb-88d3-378e585a5458"/>
+				<text><![CDATA[Shipper]]></text>
+			</staticText>
+			<line>
+				<reportElement x="371" y="300" width="179" height="1" uuid="6681580a-207c-4a3c-9f89-658578930ee2"/>
+			</line>
+			<staticText>
+				<reportElement x="425" y="321" width="96" height="19" uuid="1da63db1-68e2-4f66-8f94-365fcd823af0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Charges to be paid by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="336" width="60" height="20" uuid="baef64aa-19e6-4b79-aa2a-b671e801a8af"/>
+				<text><![CDATA[Consignee]]></text>
+			</staticText>
+			<line>
+				<reportElement x="388" y="471" width="179" height="1" uuid="96bfe071-ac39-401b-b72a-eac74e551299"/>
+			</line>
+			<staticText>
+				<reportElement x="368" y="356" width="178" height="24" uuid="00a0a5de-7da2-464f-93c8-3b07bcc5eab0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[If charges are to be prepaid, write or stamp here, "To be Prepaid."
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="369" y="355" width="201" height="1" uuid="4bf406af-a53d-4e3b-8a28-dcba32842fce"/>
+			</line>
+			<staticText>
+				<reportElement x="369" y="319" width="39" height="23" uuid="c00c02f4-c4ee-4123-bde0-c9cd9e4d12a7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.O.D.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="30" width="573" height="1" uuid="ac91790b-555c-4a78-91af-c21b634fb0d7"/>
+			</line>
+			<staticText>
+				<reportElement x="291" y="14" width="77" height="16" uuid="0a7c15bb-11f2-4c0e-8eab-b408f4684afb"/>
+				<text><![CDATA[Carrier's No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="15" width="270" height="16" uuid="812e9cc3-bca6-4174-bb91-1f96f6a013a7"/>
+				<text><![CDATA[Carrier's Name: CENTRAL OHIO LOGISTICS CENTER]]></text>
+			</staticText>
+			<line>
+				<reportElement x="398" y="10" width="172" height="1" uuid="fe695a1a-67f3-4cdd-8852-d1ef790c8cd7"/>
+			</line>
+			<line>
+				<reportElement x="369" y="390" width="198" height="1" uuid="c1f0dc8e-14af-4609-9ad7-8bafc578a467"/>
+			</line>
+			<rectangle>
+				<reportElement x="463" y="336" width="20" height="11" uuid="1c8ade2f-106d-4d05-a2ce-87b334f9a67e"/>
+			</rectangle>
+			<line>
+				<reportElement x="371" y="319" width="195" height="1" uuid="4fb53ecd-c674-41b6-a1de-b38dc4e17791"/>
+			</line>
+			<staticText>
+				<reportElement x="369" y="397" width="50" height="18" uuid="ae666559-ec3a-4652-b4f2-6415e92c2274"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Received $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="502" width="135" height="18" uuid="56bfd3af-a0db-4a38-861c-1fa6945b4674"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Charges Advanced: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="369" y="502" width="200" height="1" uuid="d42ec608-a903-4b02-b1ed-6e54fd21fbd2"/>
+			</line>
+			<staticText>
+				<reportElement x="386" y="530" width="12" height="18" uuid="009aa922-15eb-4d8a-99f9-239e6759e1b7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<line>
+				<reportElement x="396" y="540" width="170" height="1" uuid="9d8f6e17-e2ff-4bc2-a41f-38b90e888b15"/>
+			</line>
+			<line>
+				<reportElement x="366" y="552" width="203" height="1" uuid="986ea663-551b-4601-94b1-3ebb74f8de09"/>
+			</line>
+			<staticText>
+				<reportElement x="373" y="552" width="189" height="82" uuid="33c71766-1bd3-4644-b9be-6e1ec99fc22a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA["The fibre containers used for this shipment confirm to the specifications set forth in the box maker's
+certificate there on , and all other requirements of Rule 41 of the Uniform Freight Classification and Rule 5 of the National Motor Freight Classification." Shipper's imprint in lieu of stamp not a part of bill of
+lading approved by the interstate Commercial Commission.
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="25" y="274" width="117" height="1" uuid="3d4b2103-8a68-4b2a-9ccd-ae16bc573133"/>
+			</line>
+			<line>
+				<reportElement x="259" y="278" width="106" height="1" uuid="8eef1e08-ee43-4457-b431-87d1910a49ea"/>
+			</line>
+			<line>
+				<reportElement x="78" y="312" width="77" height="1" uuid="8dc0a80b-50c0-4f1d-a89f-fdf746c118f1"/>
+			</line>
+			<line>
+				<reportElement x="328" y="292" width="37" height="1" uuid="a2a25a3b-d1e1-4bcb-8669-b101d1d48418"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="355" width="377" height="1" uuid="71dcdb5f-cebc-402b-ae57-100fc98f3838"/>
+			</line>
+			<line>
+				<reportElement x="273" y="355" width="1" height="164" uuid="7dec2484-57f7-4962-baca-1b3dbd364b72"/>
+			</line>
+			<line>
+				<reportElement x="58" y="355" width="1" height="164" uuid="d115b9c7-0ca3-48b4-8b8a-c47c101b62ee"/>
+			</line>
+			<line>
+				<reportElement x="28" y="355" width="1" height="164" uuid="3af8d245-1637-4786-8174-439a8b41398d"/>
+			</line>
+			<line>
+				<reportElement x="-14" y="380" width="379" height="1" uuid="beb7413d-bc9d-4c81-a8de-612efc8c4e9a"/>
+			</line>
+			<line>
+				<reportElement x="-8" y="397" width="374" height="1" uuid="d596df4b-5212-48ab-a289-5d7f8d7b3be9"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="411" width="376" height="1" uuid="5eb949f6-675e-4c14-84b0-00df34b20554"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="430" width="376" height="1" uuid="20bd4992-e6da-4916-85f5-6143c584fb72"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="450" width="376" height="1" uuid="45565a21-3d76-4bd0-963a-c9e188db486a"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="471" width="376" height="1" uuid="5f5aed14-08c1-4d1a-bea4-06ce7c45722c"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="493" width="376" height="1" uuid="3a8e9b80-de26-44b4-8351-c4d1f05ca27c"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="519" width="376" height="1" uuid="03d26208-e7b6-489a-a9ce-645aaf3c69da"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="520" width="360" height="47" uuid="92c7bb58-9678-46a9-b50d-7a2439f6b9ae"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[If the shipment moves between two ports by a carrier by water, the law requires that the bill of lading shall state whether it is carrier's or shipper's weight.
+NOTE - Where the rate is dependent on value, shippers are required to state specifically in writing the
+agreed on declared value of the property.
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="567" width="349" height="26" uuid="b5d131dc-a67c-40a2-84c1-fc0bc6e4ac9d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[The agreed or declared value of the property is hereby specifically stated by the shipper to be not exceeding]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="593" width="355" height="1" uuid="f97bdf9e-0766-4a21-9d7e-57a675ab4a0d"/>
+			</line>
+			<staticText>
+				<reportElement x="156" y="574" width="20" height="20" uuid="55f1e876-0eda-4cca-b31f-58eebb4ec0df"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[per]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="616" width="141" height="1" uuid="0f113c66-438e-4afe-a3a7-e5201c7b8343"/>
+			</line>
+			<line>
+				<reportElement x="41" y="642" width="324" height="1" uuid="b6bbcc20-d0c6-4c89-a770-3ff9f4859763"/>
+			</line>
+			<line>
+				<reportElement x="25" y="658" width="328" height="1" uuid="a8c7d904-2652-4e9f-8a96-10d4cba961c4"/>
+			</line>
+			<line>
+				<reportElement x="201" y="617" width="164" height="1" uuid="a103bf0e-631f-4e94-8947-f2a485877668"/>
+			</line>
+			<staticText>
+				<reportElement x="140" y="602" width="56" height="24" uuid="d135f61c-d499-420b-8843-0b9e89bc2f1b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Shipper, Per]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="626" width="40" height="16" uuid="115d0f4c-629a-4907-a0ad-99de8b98a1e1"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="642" width="40" height="16" uuid="f453deac-a628-4574-8a95-bfb70e07c037"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Driver]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="642" width="40" height="16" uuid="d15c6f92-f242-4f32-a8b8-a497269cf415"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Per]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="213" width="48" height="18" uuid="3c4461e0-21b2-4394-893b-8305bc51912e"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Consigned]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="233" width="48" height="18" uuid="3984bd8d-5529-40d1-993b-6b79e4594b34"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Desination]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="248" width="38" height="18" uuid="264b90a4-9e5e-4679-982e-8ec8a7772af9"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="278" width="78" height="18" uuid="8b442c15-842a-40be-8b74-d7bb0a3ed3d4"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Delivering Carrier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="251" width="38" height="18" uuid="597fe6e2-d218-4651-8006-4736524e27c8"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[State]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="252" width="38" height="18" uuid="ac65a5f4-6bdc-4cab-89f3-15ae8f2230e9"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Zip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="213" width="14" height="18" uuid="39de7fac-e993-47e9-87ef-3675117570e3"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="265" width="78" height="18" uuid="6a902cd3-a823-4b33-bb48-b184532a2085"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Delivery Address]]></text>
+			</staticText>
+			<line>
+				<reportElement x="59" y="292" width="149" height="1" uuid="5137b707-8188-4cfb-9a17-f22424054809"/>
+			</line>
+			<staticText>
+				<reportElement x="215" y="278" width="116" height="18" uuid="c2ffe43d-4c14-4bdc-a3a8-4a8f9576c0c0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Car or Vehicle Initials & No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-6" y="295" width="102" height="18" uuid="abbcbf0b-51e2-460d-8ab2-504c913e7f99"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Collect on Delivery  $]]></text>
+			</staticText>
+			<line>
+				<reportElement x="218" y="312" width="147" height="1" uuid="5c9c9acd-deac-4242-a00f-4d50319edf87"/>
+			</line>
+			<staticText>
+				<reportElement x="162" y="297" width="56" height="18" uuid="f429d3fd-4450-4d7e-9ad1-828abe0b1fd4"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[And Remit to]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-2" y="315" width="30" height="18" uuid="a0681de5-e39f-4099-8c98-a4cbbc45d5bf"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Street]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-2" y="329" width="30" height="18" uuid="8440c387-0f71-4097-b1bb-be081dcaae0c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<line>
+				<reportElement x="28" y="329" width="337" height="1" uuid="8d8bc501-6d0d-4e45-9bfe-a0c70605bcb7"/>
+			</line>
+			<line>
+				<reportElement x="20" y="347" width="141" height="1" uuid="0c239fb6-91f7-4629-a14c-959cd9f20e8e"/>
+			</line>
+			<staticText>
+				<reportElement x="165" y="331" width="30" height="18" uuid="3522737d-0431-431d-b266-45a261db6b56"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[State]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="329" width="30" height="18" uuid="f1a2e82e-f1d5-4315-9dba-4dd51603a79c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Zip]]></text>
+			</staticText>
+			<line>
+				<reportElement x="188" y="346" width="67" height="1" uuid="e4a40278-9e94-4a7e-a0e6-674f8efd8932"/>
+			</line>
+			<line>
+				<reportElement x="294" y="346" width="71" height="1" uuid="8cd82bd5-e4ea-4fc8-b77d-a41a7a172420"/>
+			</line>
+			<staticText>
+				<reportElement x="68" y="278" width="140" height="18" uuid="88cc021c-72c7-461d-ba1f-b8324dd62519"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[CENTRAL OHIO LOGISTICS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="359" width="47" height="32" uuid="1963724c-3278-407a-9393-e14d829ecbbc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No. Packages]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="359" width="169" height="32" uuid="ac0ed197-888d-4f57-a160-76bad8bd293e"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Kind of Packages, Description of Articles, Special Marks, and Exceptions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="366" width="21" height="17" uuid="9501348a-0b69-4d21-b765-60d64f5f2beb"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[H.M.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="358" width="75" height="33" uuid="f0403eed-c1ee-49ba-bae9-a66ae75f8ab3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Weight(Subject to Correction)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-4" y="380" width="21" height="17" uuid="19933848-9b23-4692-a852-6624e5bd2289"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="251" width="140" height="18" uuid="49c74983-e3ee-4008-be72-933d5ee89d1a"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[COLUMBUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="-1" width="70" height="23" uuid="5308a808-0574-45a6-a31c-d3b3479fc851"/>
+				<text><![CDATA[Shipper's No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="-1" width="103" height="19" uuid="9f2230cc-4cb1-4a3d-9a7c-5fdda29d932f"/>
+				<textFieldExpression><![CDATA[$F{containerOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="182" y="50" width="97" height="19" uuid="952e6e4a-32de-491c-b81a-6750df865bde"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="415" width="172" height="13" uuid="0c5d0849-c245-468f-983e-f82772af1a4f"/>
+				<textFieldExpression><![CDATA["Container No: " + $F{containerNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="434" width="167" height="13" uuid="abcf0e22-4471-46f3-a884-ea0e2c913858"/>
+				<textFieldExpression><![CDATA["Seal No: " + $F{containerSeal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="455" width="193" height="13" uuid="39018d9b-e06a-45a3-86be-cb58cc1801a2"/>
+				<textFieldExpression><![CDATA["Booking No: " + $F{bookingNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="214" width="217" height="17" uuid="d88d26d3-62ee-4cdb-b540-33be092711c3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{containerRailyard}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="235" width="217" height="14" uuid="2d7e9c8f-f361-408b-852c-ef8d4ee7dfb8"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{containerStreet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="385" width="128" height="16" uuid="b4c4173e-ae6f-4902-b906-aaf277742856"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{containerSize} + " ft container"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="478" width="210" height="16" uuid="7a2123e1-df15-4dca-b541-5a9b18416fb6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{containerPackageNum} + "-" + $F{containerPackage} + " of " + $P{product}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="383" width="70" height="20" uuid="584bb1f5-2385-4358-aa05-b85cc7d6f240"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

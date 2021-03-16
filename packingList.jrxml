@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="packingList" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acba15f3-6dbc-4017-a384-f00f7077332f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<parameter name="containerID" class="java.lang.Integer"/>
+	<parameter name="bookingID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[select bookingNum, bookingLot, containerPackageType, bookingVessel, bookingVesselNum, containerNum, containerSize, containerWeight, containerProduct, containerPackage, containerSeal, containerOrderNumber, containerDescription, containerIP, containerDate, containerScreen, containerRailyard, containerStreet, containerPackageNum, customerName, addressBlock from booking inner join container on container.containerBookingID=booking.bookingID inner join customer on customer.customerID=booking.bookingCustomerID inner join address on address.addressCustomerID=customer.customerID WHERE containerID=$P{containerID}]]>
+	</queryString>
+	<field name="bookingNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="bookingLot" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingLot"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="containerPackageType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerPackageType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="bookingVessel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingVessel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="bookingVesselNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bookingVesselNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
+	</field>
+	<field name="containerNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerSize" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="containerSize"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerWeight" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="containerWeight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerProduct" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerProduct"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerPackage" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerPackage"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerSeal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerSeal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerOrderNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerOrderNumber"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerDescription" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerDescription"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerIP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerIP"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="containerDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerScreen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerScreen"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerRailyard" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerRailyard"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerStreet" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="containerStreet"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="containerPackageNum" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="containerPackageNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="customerName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="addressBlock" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="addressBlock"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="address"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="144" y="-5" width="280" height="29" uuid="c223f44c-9adc-47d8-ab8b-aff893411eae"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="10" width="370" height="40" uuid="211abe82-c357-4de5-a049-d37216fc2aff"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+					<paragraph lineSpacingSize="0.5"/>
+				</textElement>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC., 9768 Milledgeville -- Jeffersonville Road --
+Jeffersonville,OH, 43128
+TEL: (740) 426-6683 -- FAX: (740) 426-6684
+]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-2" y="0" width="82" height="49" uuid="c746410f-09a3-43e7-9d1f-548173c2996a"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement key="" positionType="FixRelativeToBottom" x="-11" y="50" width="579" height="20" backcolor="#8F8F8F" uuid="724eb6e5-c5cb-407c-ba86-3a222ea24708"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="128" y="50" width="300" height="20" uuid="629a14f6-31a4-4e50-9700-80d98be49078">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Packing List]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="440" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="80" height="13" uuid="79be3b88-ba1b-461c-be05-13ac0b14d06b"/>
+				<text><![CDATA[DATE SHIPPED: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="30" width="80" height="13" uuid="f064488f-b6bc-4b6b-bf27-7ed6c980c797"/>
+				<text><![CDATA[DATE PRINTED: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="10" width="60" height="13" uuid="c86443b9-e757-490c-bdab-4aee64259782"/>
+				<text><![CDATA[ORDER NO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="50" height="13" uuid="448c16fe-c79c-49af-90ab-c20391884070"/>
+				<text><![CDATA[SELLER:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="90" width="47" height="13" uuid="f4e5367c-7c50-40d1-b3b1-5f8da8113dd6"/>
+				<text><![CDATA[BUYER: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="30" width="180" height="41" uuid="410be80a-ecc8-4ff5-811c-74da84ac83ef"/>
+				<text><![CDATA[BLUEGRASS FARMS OF OHIO, INC.
+9768 Milledgeville , Jeffersonville Road
+Jeffersonville, OH, 43128
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="170" width="210" height="15" uuid="a45f9817-49ba-4904-b4a5-077e38d03572"/>
+				<text><![CDATA[THE FOLLOWING HAS BEEN PACKED IN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="280" width="74" height="13" uuid="d8da64ed-7f9d-451b-9431-15035696a767"/>
+				<text><![CDATA[NET WEIGHT:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="320" width="58" height="13" uuid="2ffbf724-ab84-4079-9464-6878c65f91b6"/>
+				<text><![CDATA[VESSEL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="301" width="99" height="13" uuid="ce1d9942-9952-490c-9ad6-522ecbdda3d0"/>
+				<text><![CDATA[GROSS WEIGHT:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="340" width="58" height="13" uuid="61bd7522-e1cb-4cf9-b14c-571147c8c6d9"/>
+				<text><![CDATA[VOYAGE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="360" width="120" height="13" uuid="fca20738-d7dd-4e88-83fc-695d37f06aef"/>
+				<text><![CDATA[CONTAINER NUMBER: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="380" width="80" height="13" uuid="b23fae97-45b8-4480-9017-2e187a0ee315"/>
+				<text><![CDATA[SEAL NUMBER: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="400" width="90" height="13" uuid="1f47471d-f1e4-46d0-bc04-65be606dc2d8"/>
+				<text><![CDATA[ORDER NUMBER: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="420" width="130" height="20" uuid="4b6dece6-4d6c-474c-8028-bff2d847cec9"/>
+				<text><![CDATA[BILL OF LADING NUMBER: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="200" width="52" height="1" uuid="d84f1858-2f8f-4e93-bbeb-91e549dec61f"/>
+			</line>
+			<line>
+				<reportElement x="80" y="200" width="120" height="1" uuid="0e4a16f4-af3c-47c5-9419-d43dfc12b9dc"/>
+			</line>
+			<line>
+				<reportElement x="210" y="200" width="110" height="1" uuid="f9798b37-e6e7-46c0-8121-d005e6f70a46"/>
+			</line>
+			<line>
+				<reportElement x="330" y="200" width="210" height="1" uuid="3a1087e2-0930-456a-aa1a-9ee135d57d75"/>
+			</line>
+			<staticText>
+				<reportElement x="21" y="185" width="50" height="30" uuid="cf9dd968-44e5-484d-a60a-85d98523b4f6"/>
+				<text><![CDATA[# PKGS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="185" width="114" height="30" uuid="cfb2d3e7-20b6-4c17-b1b4-37fac0cc9b30"/>
+				<text><![CDATA[PACKAGE TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="185" width="114" height="25" uuid="8e399962-5c54-4b0b-93f9-63a047b0ca13"/>
+				<text><![CDATA[VARIETY	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="186" width="70" height="15" uuid="c301ceb6-f442-4ace-8d52-8838ec8bbde7"/>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="30" width="89" height="20" uuid="14939cee-bd04-44fc-9d20-a5bb9f2ac602"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="10" width="89" height="20" uuid="6c091c30-3d16-4f18-b40d-089e76e16ab0"/>
+				<textFieldExpression><![CDATA[$F{containerOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="90" width="180" height="20" uuid="24d143a2-84e1-4549-82c9-c40a5b2e9380"/>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="200" width="39" height="20" uuid="769fe60a-9850-4b88-8fb9-cf919554a868"/>
+				<textFieldExpression><![CDATA[$F{containerPackageNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="200" width="96" height="14" uuid="e604e666-b2d3-47c8-9720-8e5c9f384062"/>
+				<textFieldExpression><![CDATA[$F{containerPackageType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="201" width="140" height="19" uuid="3dc682da-4d8c-4b89-bf60-4015012e49c7"/>
+				<textFieldExpression><![CDATA[$F{containerProduct}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="167" y="280" width="313" height="20" uuid="72586414-f613-4283-9a78-755d254af65c"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="300" width="313" height="20" uuid="cd67ece5-0929-4549-8f91-8d07f7226f65"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format( $F{containerWeight})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="320" width="313" height="20" uuid="7c4626d3-7122-4d71-8a36-c933a1614f31"/>
+				<textFieldExpression><![CDATA[$F{bookingVessel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="340" width="313" height="20" uuid="b5eaf5f6-178f-4eec-adb8-0e059dd82fd3"/>
+				<textFieldExpression><![CDATA[$F{bookingVesselNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="360" width="313" height="20" uuid="5787dff3-25f4-4c4d-a2f0-2b3cf4ae6fe2"/>
+				<textFieldExpression><![CDATA[$F{containerNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="380" width="313" height="20" uuid="bb8db880-a65f-4033-843f-ff3d4cd3421f"/>
+				<textFieldExpression><![CDATA[$F{containerSeal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="400" width="313" height="20" uuid="61f4a42b-2e22-4ce6-aa61-caf4fe5b677c"/>
+				<textFieldExpression><![CDATA[$F{containerOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="420" width="313" height="20" uuid="bb31a0fe-f2cd-4142-8399-d0e7be434e1d"/>
+				<textFieldExpression><![CDATA[$F{containerOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="200" width="199" height="15" uuid="74ca7476-10d9-44d4-96fa-acb7fa11a016"/>
+				<textFieldExpression><![CDATA[$F{containerDescription} + " " + $F{containerIP} + " " + $F{containerScreen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="6" width="80" height="20" uuid="c9155247-86b5-437a-ae0a-234d590e99a1"/>
+				<textFieldExpression><![CDATA[$F{containerDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="100" width="290" height="70" uuid="422b1a74-36e3-4c0d-9de4-83cefe88ddc4"/>
+				<textFieldExpression><![CDATA[$F{addressBlock}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
