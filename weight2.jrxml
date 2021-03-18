@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b7ebe9f-5cae-4a67-b06a-9579993b7a8d">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
 		<box>
 			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
@@ -23,44 +23,44 @@
 	</style>
 	<subDataset name="weightDataSet" uuid="834734b2-6e9e-4d1e-88e4-3f99bd410d9b">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
-		<parameter name="bookingID" class="java.lang.Integer"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
+		<parameter name="id" class="java.lang.Integer"/>
 		<parameter name="kgSum" class="java.math.BigDecimal"/>
 		<parameter name="poundSum" class="java.math.BigDecimal"/>
 		<parameter name="bushelSum" class="java.math.BigDecimal"/>
 		<queryString language="SQL">
-			<![CDATA[select containerNum, containerWeight from container where containerBookingID=$P{bookingID}]]>
+			<![CDATA[select number, weight from container where booking_id=$P{id}]]>
 		</queryString>
-		<field name="containerNum" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<field name="number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerWeight" class="java.math.BigDecimal">
-			<property name="com.jaspersoft.studio.field.label" value="containerWeight"/>
+		<field name="weight" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="weight"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
 	</subDataset>
-	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="id" class="java.lang.Integer"/>
 	<parameter name="kgSum" class="java.math.BigDecimal"/>
 	<parameter name="bushelSum" class="java.math.BigDecimal"/>
 	<parameter name="poundSum" class="java.math.BigDecimal"/>
 	<queryString language="SQL">
-		<![CDATA[select customerName, addressBlock, bookingNum, bookingLot from booking inner join customer on customer.customerID=booking.bookingCustomerID inner join address on addressCustomerID=customer.customerID where bookingID=$P{bookingID}]]>
+		<![CDATA[select name, block, number, lot_number from booking inner join customer on customer.id=booking.customer_id inner join address on customer_id=customer.id where id=$P{id}]]>
 	</queryString>
-	<field name="customerName" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="customerName"/>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
 	</field>
-	<field name="addressBlock" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="addressBlock"/>
+	<field name="block" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="block"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="address"/>
 	</field>
-	<field name="bookingNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+	<field name="number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingLot" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingLot"/>
+	<field name="lot_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lot_number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
 	<background>
@@ -114,7 +114,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="20" y="10" width="60" height="20" uuid="7e712887-b1a0-41f6-95c8-1d763d458497"/>
@@ -128,7 +128,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{addressBlock}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{block}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="20" y="70" width="60" height="20" uuid="85c3576f-f8c3-4cef-8d6a-8b46651df24e"/>
@@ -142,7 +142,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bookingNum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="20" y="90" width="60" height="20" uuid="5ebb409b-6e48-4dd3-98ae-16d494805aa7"/>
@@ -156,7 +156,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bookingLot}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lot_number}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -177,8 +177,8 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="weightDataSet" uuid="f9ef1236-70d9-4e19-88eb-847dcfd0fa8f">
-						<datasetParameter name="bookingID">
-							<datasetParameterExpression><![CDATA[$P{bookingID}]]></datasetParameterExpression>
+						<datasetParameter name="id">
+							<datasetParameterExpression><![CDATA[$P{id}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="bushelSum">
 							<datasetParameterExpression><![CDATA[$P{bushelSum}]]></datasetParameterExpression>
@@ -208,7 +208,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 						<jr:detailCell style="Table_TD" height="14">
 							<textField>
 								<reportElement x="0" y="0" width="100" height="14" uuid="d62094b7-fb22-48b0-899a-1abc27d2b163"/>
-								<textFieldExpression><![CDATA[$F{containerNum}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -230,7 +230,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 							<textField>
 								<reportElement x="0" y="0" width="110" height="14" uuid="de944536-fc77-485b-906a-732edcd4ca44"/>
 								<textElement textAlignment="Right"/>
-								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight}.divide(BigDecimal.valueOf(1/0.45359237) , 2, java.math.RoundingMode.HALF_UP))]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{weight}.divide(BigDecimal.valueOf(1/0.45359237) , 2, java.math.RoundingMode.HALF_UP))]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -252,7 +252,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 							<textField>
 								<reportElement x="0" y="0" width="100" height="14" uuid="0e9f8bcb-47e1-4d8e-a9a2-6f362893acd5"/>
 								<textElement textAlignment="Right"/>
-								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight})]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{weight})]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -286,7 +286,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 							<textField>
 								<reportElement x="0" y="0" width="120" height="14" uuid="6f8e1f5d-3ba1-4714-8d3c-cc500fad9f95"/>
 								<textElement textAlignment="Right"/>
-								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight}.divide(BigDecimal.valueOf(60), 2, java.math.RoundingMode.HALF_UP ))]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{weight}.divide(BigDecimal.valueOf(60), 2, java.math.RoundingMode.HALF_UP ))]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

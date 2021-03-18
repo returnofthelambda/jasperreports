@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="identityPreservedGrain" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf886600-b2b8-4e22-b93f-e6c66a5bd26d">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
 		<box>
 			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
@@ -25,82 +25,82 @@
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="159"/>
 		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="835"/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
-		<parameter name="bookingID" class="java.lang.String"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
+		<parameter name="id" class="java.lang.String"/>
 		<queryString language="SQL">
-			<![CDATA[SELECT containerNum,
-	containerYear,
-	containerPackageNum,
-	containerPackage,
-	containerProduct,
-	containerDescription,
-	containerIP,
-	containerScreen
+			<![CDATA[SELECT number,
+	year,
+	packageNum,
+	package,
+	product,
+	description,
+	ip,
+	screen_size
 FROM container
 WHERE 
-	 containerBookingID = $P{bookingID}]]>
+	 booking_id = $P{id}]]>
 		</queryString>
-		<field name="containerNum" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<field name="number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerYear" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerYear"/>
+		<field name="year" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="year"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerPackageNum" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.label" value="containerPackageNum"/>
+		<field name="packageNum" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="packageNum"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerPackage" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerPackage"/>
+		<field name="package" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="package"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerProduct" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerProduct"/>
+		<field name="product" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="product"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerDescription" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerDescription"/>
+		<field name="description" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="description"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerIP" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerIP"/>
+		<field name="ip" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="ip"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerScreen" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerScreen"/>
+		<field name="screen_size" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="screen_size"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
 	</subDataset>
-	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="id" class="java.lang.Integer"/>
 	<parameter name="poundSum" class="java.math.BigDecimal"/>
 	<parameter name="kgSum" class="java.math.BigDecimal"/>
 	<queryString language="SQL">
-		<![CDATA[select customerName, addressBlock, bookingNum, bookingLot, bookingVessel, bookingVesselNum from booking inner join customer on booking.bookingCustomerID=customer.customerID inner join address on customer.customerID=address.addressCustomerID WHERE bookingID=$P{bookingID}]]>
+		<![CDATA[select name, block, number, lot_number, vessel, vesselNum from booking inner join customer on booking.customer_id=customer.id inner join address on customer.id=address.customer_id WHERE id=$P{id}]]>
 	</queryString>
-	<field name="customerName" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="customerName"/>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
 	</field>
-	<field name="addressBlock" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="addressBlock"/>
+	<field name="block" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="block"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="address"/>
 	</field>
-	<field name="bookingNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+	<field name="number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingLot" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingLot"/>
+	<field name="lot_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lot_number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingVessel" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingVessel"/>
+	<field name="vessel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vessel"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingVesselNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingVesselNum"/>
+	<field name="vesselNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vesselNum"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
 	<background>
@@ -190,7 +190,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" x="90" y="71" width="91" height="21" uuid="bbf19d17-a34a-40d0-b6e6-e9a785da4b42"/>
@@ -204,21 +204,21 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bookingNum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" x="90" y="110" width="91" height="21" uuid="31880805-de01-48f8-87ac-2b967028ca45"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bookingLot}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lot_number}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement positionType="Float" x="89" y="20" width="294" height="50" uuid="3973ab2e-41f4-4e56-9288-14c57ffec16b"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{addressBlock}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{block}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -268,8 +268,8 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 					</reportElement>
 					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
 						<datasetRun subDataset="ipDataSet" uuid="ce08d19f-cd92-4a90-b494-838c584b9e21">
-							<datasetParameter name="bookingID">
-								<datasetParameterExpression><![CDATA[$P{bookingID}]]></datasetParameterExpression>
+							<datasetParameter name="id">
+								<datasetParameterExpression><![CDATA[$P{id}]]></datasetParameterExpression>
 							</datasetParameter>
 							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 						</datasetRun>
@@ -297,7 +297,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<textElement>
 										<font size="9"/>
 									</textElement>
-									<textFieldExpression><![CDATA[$F{containerYear}]]></textFieldExpression>
+									<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
@@ -328,7 +328,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<textElement>
 										<font size="9"/>
 									</textElement>
-									<textFieldExpression><![CDATA[$F{containerPackageNum}]]></textFieldExpression>
+									<textFieldExpression><![CDATA[$F{packageNum}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
@@ -356,7 +356,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<textElement>
 										<font size="9"/>
 									</textElement>
-									<textFieldExpression><![CDATA[$F{containerPackage}]]></textFieldExpression>
+									<textFieldExpression><![CDATA[$F{package}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
@@ -384,7 +384,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<textElement>
 										<font size="9"/>
 									</textElement>
-									<textFieldExpression><![CDATA[$F{containerProduct}+ " " + $F{containerDescription}+ " "+$F{containerIP} + " "+$F{containerScreen}]]></textFieldExpression>
+									<textFieldExpression><![CDATA[$F{product}+ " " + $F{description}+ " "+$F{ip} + " "+$F{screen_size}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
@@ -480,7 +480,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bookingVessel} + " " + $F{bookingVesselNum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{vessel} + " " + $F{vesselNum}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="225" y="100" width="123" height="19" uuid="8614f486-2747-4ebf-8f14-5fb13fdcf94e"/>
@@ -491,8 +491,8 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 			</staticText>
 			<subreport isUsingCache="false" runToBottom="false" overflowType="Stretch">
 				<reportElement positionType="Float" x="-10" y="147" width="528" height="20" uuid="319c8457-156c-4fc9-9b26-1ebeaaf6e942"/>
-				<subreportParameter name="bookingID">
-					<subreportParameterExpression><![CDATA[$P{bookingID}]]></subreportParameterExpression>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$P{id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA["ipCertContainers.jasper"]]></subreportExpression>

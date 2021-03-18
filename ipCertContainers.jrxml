@@ -2,25 +2,25 @@
 <!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ipCertContainers" columnCount="4" printOrder="Horizontal" pageWidth="612" pageHeight="792" columnWidth="139" columnSpacing="5" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="35ff8122-5012-46c6-b918-8fb7658f4db8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
 	<subDataset name="ipSubSet" uuid="38a59a2c-21e8-4974-9850-328707816cc4">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
-		<parameter name="bookingID" class="java.lang.Integer"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
+		<parameter name="id" class="java.lang.Integer"/>
 		<queryString language="SQL">
-			<![CDATA[select containerNum from container where containerBookingID=$P{bookingID}]]>
+			<![CDATA[select number from container where booking_id=$P{id}]]>
 		</queryString>
-		<field name="containerNum" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<field name="number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
 	</subDataset>
-	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="id" class="java.lang.Integer"/>
 	<queryString language="SQL">
-		<![CDATA[select containerNum from container where containerBookingID=$P{bookingID}]]>
+		<![CDATA[select number from container where booking_id=$P{id}]]>
 	</queryString>
-	<field name="containerNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+	<field name="number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 	</field>
 	<background>
@@ -42,7 +42,7 @@
 				<textElement>
 					<paragraph lineSpacingSize="0.0" spacingBefore="0" spacingAfter="0"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{containerNum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

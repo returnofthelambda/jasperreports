@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nonGmoSegregation" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d1f997c3-2fca-437e-8303-0114ccc54dc1">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
 		<box>
 			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
@@ -23,59 +23,59 @@
 	</style>
 	<subDataset name="nonGMOSeg" uuid="09af17ce-ba98-4020-a6a9-3da1cf5291ec">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
-		<parameter name="bookingID" class="java.lang.Integer"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
+		<parameter name="id" class="java.lang.Integer"/>
 		<queryString language="SQL">
-			<![CDATA[select containerNum, containerSeal, containerWeight, bookingNum from container inner join booking on container.containerBookingID=booking.bookingID where bookingID=$P{bookingID}]]>
+			<![CDATA[select number, seal, weight, number from container inner join booking on container.booking_id=booking.id where id=$P{id}]]>
 		</queryString>
-		<field name="containerNum" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<field name="number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerSeal" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerSeal"/>
+		<field name="seal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="seal"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerWeight" class="java.math.BigDecimal">
-			<property name="com.jaspersoft.studio.field.label" value="containerWeight"/>
+		<field name="weight" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="weight"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="bookingNum" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+		<field name="number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 		</field>
 	</subDataset>
-	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="id" class="java.lang.Integer"/>
 	<parameter name="bushelSum" class="java.math.BigDecimal"/>
 	<queryString language="SQL">
-		<![CDATA[select containerProduct, containerIP, containerDescription, containerScreen, bookingNum, bookingLot, bookingVessel from booking inner join container on container.containerBookingID=booking.bookingID  where bookingID=$P{bookingID} group by booking.bookingID]]>
+		<![CDATA[select product, ip, description, screen_size, number, lot_number, vessel from booking inner join container on container.booking_id=booking.id  where id=$P{id} group by booking.id]]>
 	</queryString>
-	<field name="containerProduct" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="containerProduct"/>
+	<field name="product" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="product"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 	</field>
-	<field name="containerIP" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="containerIP"/>
+	<field name="ip" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ip"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 	</field>
-	<field name="containerDescription" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="containerDescription"/>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 	</field>
-	<field name="containerScreen" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="containerScreen"/>
+	<field name="screen_size" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="screen_size"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 	</field>
-	<field name="bookingNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+	<field name="number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingLot" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingLot"/>
+	<field name="lot_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lot_number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingVessel" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingVessel"/>
+	<field name="vessel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vessel"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
 	<background>
@@ -186,15 +186,15 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 			</textField>
 			<textField>
 				<reportElement x="88" y="29" width="309" height="19" uuid="a79d35fd-db49-48b0-b975-bfadf90a8dba"/>
-				<textFieldExpression><![CDATA[$F{containerProduct}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{product}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="88" y="58" width="309" height="20" uuid="2caca1db-f15a-427f-a4c4-35aef13b2b8c"/>
-				<textFieldExpression><![CDATA[$F{bookingNum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="88" y="72" width="309" height="20" uuid="5b285fd8-14d8-413d-850a-2cc6f251e9fb"/>
-				<textFieldExpression><![CDATA[$F{bookingVessel}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{vessel}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="20" y="86" width="60" height="18" uuid="ee5e1194-4cf4-4d2d-a91d-034fb9be1644"/>
@@ -209,7 +209,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 			</textField>
 			<textField>
 				<reportElement x="88" y="86" width="309" height="18" uuid="9a0552c5-b0e7-4d26-b865-c104589e7fed"/>
-				<textFieldExpression><![CDATA[$F{bookingLot}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lot_number}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -223,7 +223,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				<textElement>
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA["The " + $F{containerProduct} + $F{containerDescription} + " " + $F{containerIP} + " were planted, processed, stored, and and transported in accordance with BLUEGRASS FARMS OF OHIO, INC., and the Ohio Seed Improvement Association in conjunction with the Association of Official Seed Certifying Agencies identity preserved programs for Soybeans. The IP Certificates issued by the Ohio Seed Improvement Association are proof the " + $F{containerProduct}  + " soyabeans are non-GMO. All we produce, process and sell at BLUEGRASS FARMS OF OHIO, INC., are certified non-GMO."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["The " + $F{product} + $F{description} + " " + $F{ip} + " were planted, processed, stored, and and transported in accordance with BLUEGRASS FARMS OF OHIO, INC., and the Ohio Seed Improvement Association in conjunction with the Association of Official Seed Certifying Agencies identity preserved programs for Soybeans. The IP Certificates issued by the Ohio Seed Improvement Association are proof the " + $F{product}  + " soyabeans are non-GMO. All we produce, process and sell at BLUEGRASS FARMS OF OHIO, INC., are certified non-GMO."]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
@@ -238,8 +238,8 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="nonGMOSeg" uuid="09b416c5-da86-4c36-bdc9-1d9fe3b14462">
-						<datasetParameter name="bookingID">
-							<datasetParameterExpression><![CDATA[$P{bookingID}]]></datasetParameterExpression>
+						<datasetParameter name="id">
+							<datasetParameterExpression><![CDATA[$P{id}]]></datasetParameterExpression>
 						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
@@ -261,7 +261,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 								<textElement>
 									<font size="9"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{containerNum}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -283,7 +283,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 								<textElement>
 									<font size="9"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{containerSeal}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{seal}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -305,7 +305,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 								<textElement>
 									<font size="9"/>
 								</textElement>
-								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight}.divide(BigDecimal.valueOf(1/0.45359237) , 0, java.math.RoundingMode.HALF_UP))]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{weight}.divide(BigDecimal.valueOf(1/0.45359237) , 0, java.math.RoundingMode.HALF_UP))]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -327,7 +327,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 								<textElement>
 									<font size="9"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{bookingNum}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

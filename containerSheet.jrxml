@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="packingList" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acba15f3-6dbc-4017-a384-f00f7077332f">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
@@ -32,72 +32,72 @@
 	</style>
 	<subDataset name="packListAllDataSet" uuid="60ca46f7-6d1f-4fb9-be98-f329b1ad3245">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BluegrassFarms Connection"/>
-		<parameter name="bookingID" class="java.lang.Integer"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BGF Connection"/>
+		<parameter name="id" class="java.lang.Integer"/>
 		<parameter name="poundSum" class="java.math.BigDecimal"/>
 		<parameter name="kgSum" class="java.math.BigDecimal"/>
 		<parameter name="bushelSum" class="java.math.BigDecimal"/>
 		<queryString language="SQL">
-			<![CDATA[select containerPackageNum, containerPackageType, containerNum, containerSeal, containerWeight, containerOrderNumber from container where containerBookingID=$P{bookingID}]]>
+			<![CDATA[select packageNum, packageType, number, seal, weight, order_number from container where booking_id=$P{id}]]>
 		</queryString>
-		<field name="containerPackageNum" class="java.lang.Integer">
-			<property name="com.jaspersoft.studio.field.label" value="containerPackageNum"/>
+		<field name="packageNum" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="packageNum"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerPackageType" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerPackageType"/>
+		<field name="packageType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="packageType"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerNum" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerNum"/>
+		<field name="number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerSeal" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerSeal"/>
+		<field name="seal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="seal"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerWeight" class="java.math.BigDecimal">
-			<property name="com.jaspersoft.studio.field.label" value="containerWeight"/>
+		<field name="weight" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="weight"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
-		<field name="containerOrderNumber" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.label" value="containerOrderNumber"/>
+		<field name="order_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="order_number"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="container"/>
 		</field>
 	</subDataset>
-	<parameter name="bookingID" class="java.lang.Integer"/>
+	<parameter name="id" class="java.lang.Integer"/>
 	<parameter name="poundSum" class="java.math.BigDecimal"/>
 	<parameter name="kgSum" class="java.math.BigDecimal"/>
 	<parameter name="bushelSum" class="java.math.BigDecimal"/>
 	<queryString language="SQL">
-		<![CDATA[select bookingNum, bookingETD, bookingLot, bookingVessel, bookingVesselNum, customerName, addressBlock from booking inner join customer on customer.customerID=booking.bookingCustomerID inner join address on address.addressCustomerID=customer.customerID WHERE bookingID=$P{bookingID}]]>
+		<![CDATA[select number, etd, lot_number, vessel, vesselNum, name, block from booking inner join customer on customer.id=booking.customer_id inner join address on address.customer_id=customer.id WHERE id=$P{id}]]>
 	</queryString>
-	<field name="bookingNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingNum"/>
+	<field name="number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingETD" class="java.sql.Date">
-		<property name="com.jaspersoft.studio.field.label" value="bookingETD"/>
+	<field name="etd" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="etd"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingLot" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingLot"/>
+	<field name="lot_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lot_number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingVessel" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingVessel"/>
+	<field name="vessel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vessel"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="bookingVesselNum" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="bookingVesselNum"/>
+	<field name="vesselNum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vesselNum"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="booking"/>
 	</field>
-	<field name="customerName" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="customerName"/>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
 	</field>
-	<field name="addressBlock" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="addressBlock"/>
+	<field name="block" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="block"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="address"/>
 	</field>
 	<background>
@@ -130,15 +130,15 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<textField>
 				<reportElement x="0" y="0" width="200" height="72" uuid="24d143a2-84e1-4549-82c9-c40a5b2e9380"/>
-				<textFieldExpression><![CDATA["Customer: \n" + $F{customerName} + $F{addressBlock}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Customer: \n" + $F{name} + $F{block}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="200" y="0" width="159" height="72" uuid="7c4626d3-7122-4d71-8a36-c933a1614f31"/>
-				<textFieldExpression><![CDATA["Vessel & Voyage:\n" + $F{bookingVessel} + " " + $F{bookingVesselNum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Vessel & Voyage:\n" + $F{vessel} + " " + $F{vesselNum}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="359" y="0" width="220" height="72" uuid="de277cd1-6fe4-4314-93db-1d8539a306c1"/>
-				<textFieldExpression><![CDATA["Booking/Lot:\n " +  $F{bookingNum} + "/" + $F{bookingLot}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Booking/Lot:\n " +  $F{number} + "/" + $F{lot_number}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -160,8 +160,8 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="packListAllDataSet" uuid="a31a6bee-0359-4557-bc0c-85b3ac2552a9">
-						<datasetParameter name="bookingID">
-							<datasetParameterExpression><![CDATA[$P{bookingID}]]></datasetParameterExpression>
+						<datasetParameter name="id">
+							<datasetParameterExpression><![CDATA[$P{id}]]></datasetParameterExpression>
 						</datasetParameter>
 						<datasetParameter name="kgSum">
 							<datasetParameterExpression><![CDATA[$P{kgSum}]]></datasetParameterExpression>
@@ -201,7 +201,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$F{containerPackageNum}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{packageNum}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -232,7 +232,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$F{containerPackageType}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{packageType}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -263,7 +263,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$F{containerNum}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -294,7 +294,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$F{containerSeal}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{seal}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -337,7 +337,7 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$F{containerWeight}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{weight}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -380,9 +380,9 @@ TEL: (740) 426-6683 -- FAX: (740) 426-6684
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[//new java.text.DecimalFormat("#,##0.000").format($F{containerWeight}.divide(BigDecimal.valueOf(1/0.000453592) , 3, java.math.RoundingMode.HALF_UP))
+								<textFieldExpression><![CDATA[//new java.text.DecimalFormat("#,##0.000").format($F{weight}.divide(BigDecimal.valueOf(1/0.000453592) , 3, java.math.RoundingMode.HALF_UP))
 
-new java.text.DecimalFormat("#,##0.000").format($F{containerWeight}.divide(BigDecimal.valueOf(1/0.45359237) , 0, java.math.RoundingMode.HALF_UP).divide(BigDecimal.valueOf(1000), 3, java.math.RoundingMode.HALF_UP ))]]></textFieldExpression>
+new java.text.DecimalFormat("#,##0.000").format($F{weight}.divide(BigDecimal.valueOf(1/0.45359237) , 0, java.math.RoundingMode.HALF_UP).divide(BigDecimal.valueOf(1000), 3, java.math.RoundingMode.HALF_UP ))]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -425,7 +425,7 @@ new java.text.DecimalFormat("#,##0.000").format($F{containerWeight}.divide(BigDe
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{containerWeight}.divide(BigDecimal.valueOf(60), 2, java.math.RoundingMode.HALF_UP ))]]></textFieldExpression>
+								<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($F{weight}.divide(BigDecimal.valueOf(60), 2, java.math.RoundingMode.HALF_UP ))]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -456,7 +456,7 @@ new java.text.DecimalFormat("#,##0.000").format($F{containerWeight}.divide(BigDe
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$F{containerOrderNumber}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{order_number}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
